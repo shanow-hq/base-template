@@ -4,22 +4,28 @@ import { signIn } from "next-auth/react"
 
 export default function LoginPage() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50">
-      <div className="max-w-md w-full bg-white rounded-2xl shadow-sm border border-gray-200 p-8 space-y-6">
-        <div className="text-center">
-          <h1 className="text-2xl font-bold text-gray-900">Sign in</h1>
-          <p className="mt-2 text-sm text-gray-500">
-            Continue to your account
-          </p>
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900">
+      <div className="max-w-md w-full mx-4 bg-white rounded-2xl shadow-2xl overflow-hidden">
+        <div className="bg-gradient-to-br from-blue-600 to-blue-700 px-8 py-10 text-center">
+          <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mx-auto mb-4">
+            <span className="text-2xl">✦</span>
+          </div>
+          <h1 className="text-2xl font-bold text-white">환영합니다</h1>
+          <p className="mt-1 text-sm text-blue-100">계속하려면 로그인하세요</p>
         </div>
 
-        <button
-          onClick={() => signIn("google", { callbackUrl: "/dashboard" })}
-          className="w-full flex items-center justify-center gap-3 px-4 py-3 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 transition-colors"
-        >
-          <GoogleIcon />
-          Continue with Google
-        </button>
+        <div className="px-8 py-8">
+          <button
+            onClick={() => signIn("google", { callbackUrl: "/dashboard" })}
+            className="w-full flex items-center justify-center gap-3 px-4 py-3 border border-gray-200 rounded-xl text-sm font-semibold text-gray-700 bg-white hover:bg-gray-50 hover:border-gray-300 transition-all shadow-sm"
+          >
+            <GoogleIcon />
+            Google로 계속하기
+          </button>
+          <p className="mt-6 text-center text-xs text-gray-400">
+            로그인 시 서비스 이용약관에 동의하게 됩니다
+          </p>
+        </div>
       </div>
     </div>
   )
