@@ -57,9 +57,7 @@ export default async function HomePage() {
               </p>
             </div>
             <div className="px-6 py-8">
-              <div className="pt-4">
-                <CheckoutButton label="시작하기" />
-              </div>
+              <CheckoutButton label="시작하기" />
             </div>
           </div>
         </div>

@@ -22,10 +22,7 @@ export default async function DashboardPage() {
           <span className="font-bold text-xl text-gray-900">%%SERVICE_TITLE%%</span>
           <div className="flex items-center gap-4">
             <span className="text-sm text-gray-500">{session.user.email}</span>
-            <Link
-              href="/api/auth/signout"
-              className="text-sm text-gray-500 hover:text-gray-700"
-            >
+            <Link href="/api/auth/signout" className="text-sm text-gray-500 hover:text-gray-700">
               로그아웃
             </Link>
           </div>
@@ -34,7 +31,7 @@ export default async function DashboardPage() {
 
       <div className="max-w-5xl mx-auto px-4 py-12">
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-900">대시보드</h1>
+          <h1 className="text-3xl font-bold text-gray-900">%%SERVICE_TITLE%% 대시보드</h1>
           <p className="mt-2 text-gray-500">%%SERVICE_DESCRIPTION%%</p>
         </div>
 
@@ -42,9 +39,7 @@ export default async function DashboardPage() {
           <div className="mb-8 p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
             <p className="text-sm text-yellow-800">
               ⚡ Pro 플랜으로 업그레이드하면 모든 기능을 사용할 수 있어요.{" "}
-              <Link href="/" className="font-semibold underline">
-                업그레이드하기
-              </Link>
+              <Link href="/" className="font-semibold underline">업그레이드하기</Link>
             </p>
           </div>
         )}
