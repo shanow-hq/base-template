@@ -13,6 +13,7 @@ function VerifyContent() {
       router.push("/login")
       return
     }
+
     fetch("/api/auth/verify", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -20,8 +21,11 @@ function VerifyContent() {
     })
       .then((r) => r.json())
       .then((data: { success: boolean }) => {
-        if (data.success) router.push("/dashboard")
-        else router.push("/login")
+        if (data.success) {
+          window.location.href = "/dashboard"
+        } else {
+          router.push("/login")
+        }
       })
       .catch(() => router.push("/login"))
   }, [])
@@ -34,9 +38,5 @@ function VerifyContent() {
 }
 
 export default function VerifyPage() {
-  return (
-    <Suspense>
-      <VerifyContent />
-    </Suspense>
-  )
+  return <Suspense><VerifyContent /></Suspense>
 }
